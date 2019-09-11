@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:StartNewProcessInstanceScalar>
+         <!--Optional:-->
+         <d1:ProcessFullName>SmartObjectFilter\RoleFilter</d1:ProcessFullName>
+         <!--Optional:-->
+         <d1:Folio>0000002</d1:Folio>
+         <d1:Sync>false</d1:Sync>
+      </d1:StartNewProcessInstanceScalar>
+   </soapenv:Body>
+</soapenv:Envelope>
+

@@ -9,11 +9,11 @@
         <restConfiguration bindingMode="json" component="servlet"
             host="localhost" port="8081"/>
         <rest id="rest-728d490e-252f-403d-b2cb-337e31cee918" path="/jaxrs">
-            <put id="get-d79f561f-c826-4230-a2e1-c2daa6cbc6c2"
+            <get id="get-d79f561f-c826-4230-a2e1-c2daa6cbc6c2"
                 outType="com.k2.schemas.worklist.d1.ExecuteActionBySerialResponse"
-                type="com.k2.schemas.worklist.d1.ExecuteActionBySerial" uri="/executeactionbyserial">
+                type="com.k2.schemas.worklist.d1.ExecuteActionBySerial" uri="/executeactionbyserial/{arg0}">
                 <to uri="direct:ExecuteActionBySerial"/>
-            </put>
+            </get>
             <get id="get-f1438165-956e-49e0-84d1-b95e2164a5ea"
                 outType="com.k2.schemas.worklist.d1.ExecuteActionByWorklistItemResponse"
                 type="com.k2.schemas.worklist.d1.ExecuteActionByWorklistItem" uri="/executeactionbyworklistitem/{arg0}">
@@ -59,24 +59,8 @@
         </rest>
         <route id="ExecuteActionBySerial">
             <from id="_from1" uri="direct:ExecuteActionBySerial"/>
-            <to id="_to12" uri="log:foo"/>
             <log id="_log1" loggingLevel="INFO" message="ExecuteActionBySerial"/>
-            <log id="_log11" loggingLevel="INFO" message="log11: ${body}"/>
-            <setBody id="_setBody10">
-                <simple>&lt;ExecuteActionBySerial xmlns="http://schemas.k2.com/worklist/d1"&gt;
-    &lt;Serial&gt;6569_9&lt;/Serial&gt;
-    &lt;Action&gt;Process&lt;/Action&gt;
-    &lt;Sync&gt;false&lt;/Sync&gt;
-&lt;/ExecuteActionBySerial&gt;</simple>
-            </setBody>
-            <log id="_log12" loggingLevel="INFO" message="log11: ${body}"/>
-             
-            <to id="_to1" uri="cxf://http://localhost:8088/mockWSSoap?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=ExecuteActionBySerial"/>
-            
-            <!--  
-            <to id="_to1" uri="cxf://http://localhost:8088/mockWSSoap?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=OpenWorklist"/>
-            -->
-            <to id="_to13" uri="log:foo"/>
+            <to id="_to1" uri="cxf://http://localhost:8088/k2services/WS.asmx?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=ExecuteActionBySerial"/>
             <setHeader headerName="Content-Type" id="_setHeader1">
                 <constant>application/json</constant>
             </setHeader>
@@ -116,17 +100,22 @@
             <to id="_to4" uri="cxf://http://localhost:8088/mockWSSoap?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=OpenWorklist"/>
             <log id="_log42" loggingLevel="INFO" message="${body[0].worklistItem[0].content[0]}"/>
             <to id="_to10" uri="log:foo"/>
+            
             <setHeader headerName="Content-Type" id="_setHeader4">
                 <constant>application/json</constant>
             </setHeader>
+            
             <setBody id="_setBody4">
                 <simple>${body[0].worklistItem[0].content[0].value}</simple>
+                
             </setBody>
-            <split id="_split1">
-                <tokenize regex="true" token=".*SN="/>
-                <to id="_to11" uri="log:tokenize"/>
+            <split>
+            		<tokenize regex="true" token=".*SN="></tokenize>
+            		<to uri="log:tokenize"/>
             </split>
-            <log id="_log10" loggingLevel="INFO" message="data: ${body}"/>
+         
+            <log loggingLevel="INFO" message="data: ${body}"/>
+
         </route>
         <route id="OpenWorklistItem">
             <from id="_from5" uri="direct:OpenWorklistItem"/>

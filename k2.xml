@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8b621379-87b4-46ce-a38b-85a9030b1315" activeEnvironment="Default" name="HelloService" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="66ed35cf-875e-473a-8ee5-9926ba32f4a8" wsaVersion="NONE" name="HelloService" type="wsdl" bindingName="{http://www.example.com/hello}HelloServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/lbroudou/Development/github/microcks/samples/HelloService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/lbroudou/Development/github/microcks/samples/HelloService.wsdl"><con:part><con:url>file:/Users/lbroudou/Development/github/microcks/samples/HelloService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HelloService" targetNamespace="http://www.example.com/hello" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.com/hello" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+&lt;OpenWorklist xmlns="http://schemas.k2.com/worklist/d1">
+    &lt;IncludeData>false&lt;/IncludeData>
+&lt;/OpenWorklist></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/ExecuteActionBySerial"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="559776fb-c766-4911-8461-b74f56009894" isOneWay="false" action="http://schemas.k2.com/worklist/d1/ExecuteActionByWorklistItem" name="ExecuteActionByWorklistItem" bindingOperationName="ExecuteActionByWorklistItem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b5a867e3-a4e5-436a-b83f-0c6e52cc5731" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1" xmlns:d11="http://schemas.k2.com/process/d1" xmlns:d12="http://schemas.k2.com/activity/d1" xmlns:d13="http://schemas.k2.com/event/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:ExecuteActionByWorklistItem>
+         <d1:WorklistItem AllocatedUser="?" ID="?" SerialNumber="?" Status="?">
+            <!--Optional:-->
+            <d1:Data>?</d1:Data>
+            <!--Zero or more repetitions:-->
+            <d1:Action Name="?" Batchable="?"/>
+            <!--Optional:-->
+            <d11:ProcessInstance ExpectedDuration="?" Folder="?" Folio="?" FullName="?" Guid="?" ID="?" Name="?" Priority="?" StartDate="?" Status="?">
+               <!--Optional:-->
+               <d11:Description>?</d11:Description>
+               <!--Optional:-->
+               <d11:Metadata>?</d11:Metadata>
+               <!--Zero or more repetitions:-->
+               <d11:DataField Name="?">?</d11:DataField>
+               <!--Zero or more repetitions:-->
+               <d11:XmlField Name="?">?</d11:XmlField>
+               <!--Optional:-->
+               <d1:ViewFlow>?</d1:ViewFlow>
+            </d11:ProcessInstance>
+            <!--Optional:-->
+            <d12:ActivityInstanceDestination ActID="?" ActInstID="?" ExpectedDuration="?" ID="?" Name="?" Priority="?" ProcInstID="?" StartDate="?">
+               <!--Optional:-->
+               <d12:Description>?</d12:Description>
+               <!--Optional:-->
+               <d12:Metadata>?</d12:Metadata>
+               <!--Zero or more repetitions:-->
+               <d11:DataField Name="?">?</d11:DataField>
+               <!--Zero or more repetitions:-->
+               <d11:XmlField Name="?">?</d11:XmlField>
+            </d12:ActivityInstanceDestination>
+            <!--Zero or more repetitions:-->
+            <d1:DelegatedUser Name="?"/>
+            <!--Optional:-->
+            <d13:ActivityInstanceDestination ExpectedDuration="?" ID="?" Name="?" Priority="?" StartDate="?">
+               <!--Optional:-->
+               <d13:Description>?</d13:Description>
+               <!--Optional:-->
+               <d13:Metadata>?</d13:Metadata>
+            </d13:ActivityInstanceDestination>
+            <!--Optional:-->
+            <d1:Instruction>?</d1:Instruction>
+         </d1:WorklistItem>
+         <!--Optional:-->
+         <d1:Action>?</d1:Action>
+         <d1:Sync>?</d1:Sync>
+      </d1:ExecuteActionByWorklistItem>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/ExecuteActionByWorklistItem"/></con:call></con:operation><con:operation id="acecc9ba-b2d2-4051-9b3e-d02b99ffb602" isOneWay="false" action="http://schemas.k2.com/worklist/d1/OpenProcessInstance" name="OpenProcessInstance" bindingOperationName="OpenProcessInstance" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0eab7619-9536-46f4-b47a-e6cdbe3c3061" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:OpenProcessInstance>
+         <d1:ProcInstID>?</d1:ProcInstID>
+      </d1:OpenProcessInstance>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/OpenProcessInstance"/></con:call></con:operation><con:operation id="82e53a5e-271d-44ab-95e6-209f873be000" isOneWay="false" action="http://schemas.k2.com/worklist/d1/OpenWorklist" name="OpenWorklist" bindingOperationName="OpenWorklist" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3e8c9ebd-c625-4c7b-bc75-7b4eb5f4f46f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockWSSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:OpenWorklist>
+         <d1:IncludeData>false</d1:IncludeData>
+      </d1:OpenWorklist>
+   </soapenv:Body>
+</soapenv:Envelope>
+]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/OpenWorklist"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="10745b87-1317-4042-a83d-6792b8484a62" isOneWay="false" action="http://schemas.k2.com/worklist/d1/OpenWorklistItem" name="OpenWorklistItem" bindingOperationName="OpenWorklistItem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d15b090d-33c2-4937-a0aa-ba837b51ec58" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:OpenWorklistItem>
+         <!--Optional:-->
+         <d1:Serial>?</d1:Serial>
+         <d1:Sync>?</d1:Sync>
+      </d1:OpenWorklistItem>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/OpenWorklistItem"/></con:call></con:operation><con:operation id="cbfc65ac-db77-41bc-baec-f8769d751cd6" isOneWay="false" action="http://schemas.k2.com/worklist/d1/ReleaseWorklistItem" name="ReleaseWorklistItem" bindingOperationName="ReleaseWorklistItem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="10e3bc89-2620-4d28-b1e7-3076ea17cd93" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:ReleaseWorklistItem>
+         <!--Optional:-->
+         <d1:Serial>?</d1:Serial>
+      </d1:ReleaseWorklistItem>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/ReleaseWorklistItem"/></con:call></con:operation><con:operation id="1f2ec77f-a1c5-4b83-8ddc-860d4cb0a69b" isOneWay="false" action="http://schemas.k2.com/worklist/d1/StartNewProcessInstance" name="StartNewProcessInstance" bindingOperationName="StartNewProcessInstance" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a2935189-0058-455f-883d-d5daaef7e361" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1" xmlns:d11="http://schemas.k2.com/process/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:StartNewProcessInstance>
+         <d1:ProcessInstance ExpectedDuration="?" Folder="?" Folio="?" FullName="?" Guid="?" ID="?" Name="?" Priority="?" StartDate="?" Status="?">
+            <!--Optional:-->
+            <d11:Description>?</d11:Description>
+            <!--Optional:-->
+            <d11:Metadata>?</d11:Metadata>
+            <!--Zero or more repetitions:-->
+            <d11:DataField Name="?">?</d11:DataField>
+            <!--Zero or more repetitions:-->
+            <d11:XmlField Name="?">?</d11:XmlField>
+            <!--Optional:-->
+            <d1:ViewFlow>?</d1:ViewFlow>
+         </d1:ProcessInstance>
+         <d1:Sync>?</d1:Sync>
+      </d1:StartNewProcessInstance>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/StartNewProcessInstance"/></con:call></con:operation><con:operation id="8786e62f-c5ed-41e4-a2c6-21cce91b5e7f" isOneWay="false" action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar" name="StartNewProcessInstanceScalar" bindingOperationName="StartNewProcessInstanceScalar" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c70d7501-63db-40cc-ad8a-86557fca41df" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockWSSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:StartNewProcessInstanceScalar>
+         <!--Optional:-->
+         <d1:ProcessFullName>?</d1:ProcessFullName>
+         <!--Optional:-->
+         <d1:Folio>?</d1:Folio>
+         <d1:Sync>?</d1:Sync>
+      </d1:StartNewProcessInstanceScalar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar"/><con:wsrmConfig version="1.2"/></con:call><con:call id="b27e313f-da50-4eab-b5c2-f4dd110b54c4" name="Request 2" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="test" value="test1" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:StartNewProcessInstanceScalar>
+         <!--Optional:-->
+         <d1:ProcessFullName>SmartObjectFilter\RoleFilter</d1:ProcessFullName>
+         <!--Optional:-->
+         <d1:Folio>0000002</d1:Folio>
+         <d1:Sync>false</d1:Sync>
+      </d1:StartNewProcessInstanceScalar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>kedibe@k2trial.com</con:username><con:password>Kalb2!296</con:password><con:domain>HK</con:domain><con:selectedAuthProfile>NTLM</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>NTLM</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a3101ee3-8064-411a-ac1a-60533c60f8a9" isOneWay="false" action="http://schemas.k2.com/worklist/d1/UpdateProcessInstance" name="UpdateProcessInstance" bindingOperationName="UpdateProcessInstance" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c3f24a0e-e93e-44fe-bca7-32eed21fe8e1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1" xmlns:d11="http://schemas.k2.com/process/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:UpdateProcessInstance>
+         <d1:ProcessInstance ExpectedDuration="?" Folder="?" Folio="?" FullName="?" Guid="?" ID="?" Name="?" Priority="?" StartDate="?" Status="?">
+            <!--Optional:-->
+            <d11:Description>?</d11:Description>
+            <!--Optional:-->
+            <d11:Metadata>?</d11:Metadata>
+            <!--Zero or more repetitions:-->
+            <d11:DataField Name="?">?</d11:DataField>
+            <!--Zero or more repetitions:-->
+            <d11:XmlField Name="?">?</d11:XmlField>
+            <!--Optional:-->
+            <d1:ViewFlow>?</d1:ViewFlow>
+         </d1:ProcessInstance>
+         <d1:Sync>?</d1:Sync>
+      </d1:UpdateProcessInstance>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/UpdateProcessInstance"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="517a53a0-6331-4fa5-87fd-00cd287dc949" wsaVersion="NONE" name="WSSoap12" type="wsdl" bindingName="{http://schemas.k2.com/worklist/d1}WSSoap12" soapVersion="1_2" anonymous="optional" definition="https://trial.onk2.com/K2Services/ws.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://trial.onk2.com/K2Services/ws.asmx?wsdl"><con:part><con:url>https://trial.onk2.com/K2Services/ws.asmx?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://schemas.k2.com/worklist/d1" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s3="http://schemas.k2.com/event/d1" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.k2.com/worklist/d1" xmlns:s1="http://schemas.k2.com/process/d1" xmlns:s2="http://schemas.k2.com/activity/d1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.k2.com/worklist/d1">
+      <s:import namespace="http://schemas.k2.com/process/d1"/>
+      <s:import namespace="http://schemas.k2.com/activity/d1"/>
+      <s:import namespace="http://schemas.k2.com/event/d1"/>
+      <s:element name="OpenProcessInstance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcInstID" type="s:long"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenProcessInstanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessInstance" nillable="true" type="tns:ProcessInstance"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProcessInstance">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" ref="s1:Description"/>
+          <s:element minOccurs="0" maxOccurs="1" ref="s1:Metadata"/>
+          <s:element minOccurs="0" maxOccurs="unbounded" ref="s1:DataField"/>
+          <s:element minOccurs="0" maxOccurs="unbounded" ref="s1:XmlField"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ViewFlow" type="s:string"/>
+        </s:sequence>
+        <s:attribute name="ExpectedDuration" type="s:long" use="required"/>
+        <s:attribute name="Folder" type="s:string"/>
+        <s:attribute name="Folio" type="s:string"/>
+        <s:attribute name="FullName" type="s:string"/>
+        <s:attribute name="Guid" type="s:string"/>
+        <s:attribute name="ID" type="s:long" use="required"/>
+        <s:attribute name="Name" type="s:string"/>
+        <s:attribute name="Priority" type="s:int" use="required"/>
+        <s:attribute name="StartDate" type="s:dateTime" use="required"/>
+        <s:attribute name="Status" type="tns:ProcessStatus" use="required"/>
+      </s:complexType>
+      <s:simpleType name="ProcessStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Error"/>
+          <s:enumeration value="Running"/>
+          <s:enumeration value="Active"/>
+          <s:enumeration value="Completed"/>
+          <s:enumeration value="Stopped"/>
+          <s:enumeration value="Deleted"/>
+          <s:enumeration value="New"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="StartNewProcessInstance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessInstance" nillable="true" type="tns:ProcessInstance"/>
+            <s:element minOccurs="1" maxOccurs="1" name="Sync" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartNewProcessInstanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessInstance" nillable="true" type="tns:ProcessInstance"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartNewProcessInstanceScalar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessFullName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Folio" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="Sync" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartNewProcessInstanceScalarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartNewProcessInstanceScalarResult" type="s:long"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProcessInstance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessInstance" nillable="true" type="tns:ProcessInstance"/>
+            <s:element minOccurs="1" maxOccurs="1" name="Sync" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProcessInstanceResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="OpenWorklist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeData" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenWorklistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OpenWorklistResult" type="tns:ArrayOfWorklistItem"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWorklistItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WorklistItem" nillable="true" type="tns:WorklistItem"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WorklistItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Action" type="tns:Action"/>
+          <s:element minOccurs="0" maxOccurs="1" ref="s1:ProcessInstance"/>
+          <s:element minOccurs="0" maxOccurs="1" ref="s2:ActivityInstanceDestination"/>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DelegatedUser" type="s1:Destination"/>
+          <s:element minOccurs="0" maxOccurs="1" ref="s3:ActivityInstanceDestination"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Instruction" type="s:string"/>
+        </s:sequence>
+        <s:attribute name="AllocatedUser" type="s:string"/>
+        <s:attribute name="ID" type="s:long" use="required"/>
+        <s:attribute name="SerialNumber" type="s:string"/>
+        <s:attribute name="Status" type="tns:WorklistStatus" use="required"/>
+      </s:complexType>
+      <s:complexType name="Action">
+        <s:attribute name="Name" type="s:string"/>
+        <s:attribute name="Batchable" type="s:boolean" use="required"/>
+      </s:complexType>
+      <s:simpleType name="WorklistStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Available"/>
+          <s:enumeration value="Open"/>
+          <s:enumeration value="Allocated"/>
+          <s:enumeration value="Sleep"/>
+          <s:enumeration value="Completed"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="OpenWorklistItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Serial" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="Sync" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenWorklistItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WorklistItem" nillable="true" type="tns:WorklistItem"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteActionBySerial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Serial" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="Sync" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteActionBySerialResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="ExecuteActionByWorklistItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WorklistItem" nillable="true" type="tns:WorklistItem"/>
+            <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="Sync" type="s:boolean"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteActionByWorklistItemResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="ReleaseWorklistItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Serial" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReleaseWorklistItemResponse">
+        <s:complexType/>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.k2.com/process/d1">
+      <s:import namespace="http://schemas.k2.com/worklist/d1"/>
+      <s:element name="Description" type="s:string"/>
+      <s:element name="Metadata" type="s:string"/>
+      <s:element name="DataField" type="s1:DataField"/>
+      <s:complexType name="DataField">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="Name" type="s:string"/>
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:element name="XmlField" type="s1:XmlField"/>
+      <s:complexType name="XmlField">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="Name" type="s:string"/>
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:element name="ProcessInstance" type="tns:ProcessInstance"/>
+      <s:complexType name="Destination">
+        <s:attribute name="Name" type="s:string"/>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.k2.com/activity/d1">
+      <s:import namespace="http://schemas.k2.com/process/d1"/>
+      <s:element name="ActivityInstanceDestination" type="s2:ActivityInstanceDestination"/>
+      <s:complexType name="ActivityInstanceDestination">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Metadata" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="unbounded" ref="s1:DataField"/>
+          <s:element minOccurs="0" maxOccurs="unbounded" ref="s1:XmlField"/>
+        </s:sequence>
+        <s:attribute name="ActID" type="s:long" use="required"/>
+        <s:attribute name="ActInstID" type="s:long" use="required"/>
+        <s:attribute name="ExpectedDuration" type="s:long" use="required"/>
+        <s:attribute name="ID" type="s:long" use="required"/>
+        <s:attribute name="Name" type="s:string"/>
+        <s:attribute name="Priority" type="s:int" use="required"/>
+        <s:attribute name="ProcInstID" type="s:long" use="required"/>
+        <s:attribute name="StartDate" type="s:dateTime" use="required"/>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.k2.com/event/d1">
+      <s:element name="ActivityInstanceDestination" type="s3:EventInstance"/>
+      <s:complexType name="EventInstance">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Metadata" type="s:string"/>
+        </s:sequence>
+        <s:attribute name="ExpectedDuration" type="s:long" use="required"/>
+        <s:attribute name="ID" type="s:long" use="required"/>
+        <s:attribute name="Name" type="s:string"/>
+        <s:attribute name="Priority" type="s:int" use="required"/>
+        <s:attribute name="StartDate" type="s:dateTime" use="required"/>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OpenProcessInstanceSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenProcessInstance"/>
+  </wsdl:message>
+  <wsdl:message name="OpenProcessInstanceSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenProcessInstanceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="StartNewProcessInstanceSoapIn">
+    <wsdl:part name="parameters" element="tns:StartNewProcessInstance"/>
+  </wsdl:message>
+  <wsdl:message name="StartNewProcessInstanceSoapOut">
+    <wsdl:part name="parameters" element="tns:StartNewProcessInstanceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="StartNewProcessInstanceScalarSoapIn">
+    <wsdl:part name="parameters" element="tns:StartNewProcessInstanceScalar"/>
+  </wsdl:message>
+  <wsdl:message name="StartNewProcessInstanceScalarSoapOut">
+    <wsdl:part name="parameters" element="tns:StartNewProcessInstanceScalarResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateProcessInstanceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProcessInstance"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateProcessInstanceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProcessInstanceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="OpenWorklistSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenWorklist"/>
+  </wsdl:message>
+  <wsdl:message name="OpenWorklistSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenWorklistResponse"/>
+  </wsdl:message>
+  <wsdl:message name="OpenWorklistItemSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenWorklistItem"/>
+  </wsdl:message>
+  <wsdl:message name="OpenWorklistItemSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenWorklistItemResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ExecuteActionBySerialSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteActionBySerial"/>
+  </wsdl:message>
+  <wsdl:message name="ExecuteActionBySerialSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteActionBySerialResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ExecuteActionByWorklistItemSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteActionByWorklistItem"/>
+  </wsdl:message>
+  <wsdl:message name="ExecuteActionByWorklistItemSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteActionByWorklistItemResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ReleaseWorklistItemSoapIn">
+    <wsdl:part name="parameters" element="tns:ReleaseWorklistItem"/>
+  </wsdl:message>
+  <wsdl:message name="ReleaseWorklistItemSoapOut">
+    <wsdl:part name="parameters" element="tns:ReleaseWorklistItemResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="WSSoap">
+    <wsdl:operation name="OpenProcessInstance">
+      <wsdl:input message="tns:OpenProcessInstanceSoapIn"/>
+      <wsdl:output message="tns:OpenProcessInstanceSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewProcessInstance">
+      <wsdl:input message="tns:StartNewProcessInstanceSoapIn"/>
+      <wsdl:output message="tns:StartNewProcessInstanceSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewProcessInstanceScalar">
+      <wsdl:input message="tns:StartNewProcessInstanceScalarSoapIn"/>
+      <wsdl:output message="tns:StartNewProcessInstanceScalarSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProcessInstance">
+      <wsdl:input message="tns:UpdateProcessInstanceSoapIn"/>
+      <wsdl:output message="tns:UpdateProcessInstanceSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="OpenWorklist">
+      <wsdl:input message="tns:OpenWorklistSoapIn"/>
+      <wsdl:output message="tns:OpenWorklistSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="OpenWorklistItem">
+      <wsdl:input message="tns:OpenWorklistItemSoapIn"/>
+      <wsdl:output message="tns:OpenWorklistItemSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteActionBySerial">
+      <wsdl:input message="tns:ExecuteActionBySerialSoapIn"/>
+      <wsdl:output message="tns:ExecuteActionBySerialSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteActionByWorklistItem">
+      <wsdl:input message="tns:ExecuteActionByWorklistItemSoapIn"/>
+      <wsdl:output message="tns:ExecuteActionByWorklistItemSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWorklistItem">
+      <wsdl:input message="tns:ReleaseWorklistItemSoapIn"/>
+      <wsdl:output message="tns:ReleaseWorklistItemSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSSoap" type="tns:WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="OpenProcessInstance">
+      <soap:operation soapAction="http://schemas.k2.com/worklist/d1/OpenProcessInstance" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewProcessInstance">
+      <soap:operation soapAction="http://schemas.k2.com/worklist/d1/StartNewProcessInstance" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewProcessInstanceScalar">
+      <soap:operation soapAction="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProcessInstance">
+      <soap:operation soapAction="http://schemas.k2.com/worklist/d1/UpdateProcessInstance" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenWorklist">
+      <soap:operation soapAction="http://schemas.k2.com/worklist/d1/OpenWorklist" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenWorklistItem">
+      <soap:operation soapAction="http://schemas.k2.com/worklist/d1/OpenWorklistItem" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteActionBySerial">
+      <soap:operation soapAction="http://schemas.k2.com/worklist/d1/ExecuteActionBySerial" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteActionByWorklistItem">
+      <soap:operation soapAction="http://schemas.k2.com/worklist/d1/ExecuteActionByWorklistItem" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWorklistItem">
+      <soap:operation soapAction="http://schemas.k2.com/worklist/d1/ReleaseWorklistItem" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSoap12" type="tns:WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="OpenProcessInstance">
+      <soap12:operation soapAction="http://schemas.k2.com/worklist/d1/OpenProcessInstance" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewProcessInstance">
+      <soap12:operation soapAction="http://schemas.k2.com/worklist/d1/StartNewProcessInstance" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewProcessInstanceScalar">
+      <soap12:operation soapAction="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProcessInstance">
+      <soap12:operation soapAction="http://schemas.k2.com/worklist/d1/UpdateProcessInstance" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenWorklist">
+      <soap12:operation soapAction="http://schemas.k2.com/worklist/d1/OpenWorklist" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenWorklistItem">
+      <soap12:operation soapAction="http://schemas.k2.com/worklist/d1/OpenWorklistItem" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteActionBySerial">
+      <soap12:operation soapAction="http://schemas.k2.com/worklist/d1/ExecuteActionBySerial" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteActionByWorklistItem">
+      <soap12:operation soapAction="http://schemas.k2.com/worklist/d1/ExecuteActionByWorklistItem" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseWorklistItem">
+      <soap12:operation soapAction="http://schemas.k2.com/worklist/d1/ReleaseWorklistItem" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS">
+    <wsdl:port name="WSSoap" binding="tns:WSSoap">
+      <soap:address location="https://trial.onk2.com/K2Services/ws.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="WSSoap12" binding="tns:WSSoap12">
+      <soap12:address location="https://trial.onk2.com/K2Services/ws.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint></con:endpoints><con:operation id="b8759556-1156-4c6b-bc67-18c1a5f7c68d" isOneWay="false" action="http://schemas.k2.com/worklist/d1/ExecuteActionBySerial" name="ExecuteActionBySerial" bindingOperationName="ExecuteActionBySerial" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9e7eb2a5-a821-4b57-a9d3-3ea309a505f6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soap:Header/>
+   <soap:Body>
+      <d1:ExecuteActionBySerial>
+         <!--Optional:-->
+         <d1:Serial>?</d1:Serial>
+         <!--Optional:-->
+         <d1:Action>?</d1:Action>
+         <d1:Sync>?</d1:Sync>
+      </d1:ExecuteActionBySerial>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/ExecuteActionBySerialRequest"/></con:call></con:operation><con:operation id="b249eaac-1e3c-4378-9c2a-6b6cf6573e4e" isOneWay="false" action="http://schemas.k2.com/worklist/d1/ExecuteActionByWorklistItem" name="ExecuteActionByWorklistItem" bindingOperationName="ExecuteActionByWorklistItem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7c8a34c5-403c-4849-b6ad-cc869bca2b18" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:d1="http://schemas.k2.com/worklist/d1" xmlns:d11="http://schemas.k2.com/process/d1" xmlns:d12="http://schemas.k2.com/activity/d1" xmlns:d13="http://schemas.k2.com/event/d1">
+   <soap:Header/>
+   <soap:Body>
+      <d1:ExecuteActionByWorklistItem>
+         <d1:WorklistItem AllocatedUser="?" ID="?" SerialNumber="?" Status="?">
+            <!--Optional:-->
+            <d1:Data>?</d1:Data>
+            <!--Zero or more repetitions:-->
+            <d1:Action Name="?" Batchable="?"/>
+            <!--Optional:-->
+            <d11:ProcessInstance ExpectedDuration="?" Folder="?" Folio="?" FullName="?" Guid="?" ID="?" Name="?" Priority="?" StartDate="?" Status="?">
+               <!--Optional:-->
+               <d11:Description>?</d11:Description>
+               <!--Optional:-->
+               <d11:Metadata>?</d11:Metadata>
+               <!--Zero or more repetitions:-->
+               <d11:DataField Name="?">?</d11:DataField>
+               <!--Zero or more repetitions:-->
+               <d11:XmlField Name="?">?</d11:XmlField>
+               <!--Optional:-->
+               <d1:ViewFlow>?</d1:ViewFlow>
+            </d11:ProcessInstance>
+            <!--Optional:-->
+            <d12:ActivityInstanceDestination ActID="?" ActInstID="?" ExpectedDuration="?" ID="?" Name="?" Priority="?" ProcInstID="?" StartDate="?">
+               <!--Optional:-->
+               <d12:Description>?</d12:Description>
+               <!--Optional:-->
+               <d12:Metadata>?</d12:Metadata>
+               <!--Zero or more repetitions:-->
+               <d11:DataField Name="?">?</d11:DataField>
+               <!--Zero or more repetitions:-->
+               <d11:XmlField Name="?">?</d11:XmlField>
+            </d12:ActivityInstanceDestination>
+            <!--Zero or more repetitions:-->
+            <d1:DelegatedUser Name="?"/>
+            <!--Optional:-->
+            <d13:ActivityInstanceDestination ExpectedDuration="?" ID="?" Name="?" Priority="?" StartDate="?">
+               <!--Optional:-->
+               <d13:Description>?</d13:Description>
+               <!--Optional:-->
+               <d13:Metadata>?</d13:Metadata>
+            </d13:ActivityInstanceDestination>
+            <!--Optional:-->
+            <d1:Instruction>?</d1:Instruction>
+         </d1:WorklistItem>
+         <!--Optional:-->
+         <d1:Action>?</d1:Action>
+         <d1:Sync>?</d1:Sync>
+      </d1:ExecuteActionByWorklistItem>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/ExecuteActionByWorklistItemRequest"/></con:call></con:operation><con:operation id="5375e63f-21aa-43f1-92e7-4d320c62c439" isOneWay="false" action="http://schemas.k2.com/worklist/d1/OpenProcessInstance" name="OpenProcessInstance" bindingOperationName="OpenProcessInstance" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b5359345-d2a7-445b-ac83-6616a1ac2907" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soap:Header/>
+   <soap:Body>
+      <d1:OpenProcessInstance>
+         <d1:ProcInstID>?</d1:ProcInstID>
+      </d1:OpenProcessInstance>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/OpenProcessInstanceRequest"/></con:call></con:operation><con:operation id="9d1b5d9b-6e26-42ce-8fc4-434352b82683" isOneWay="false" action="http://schemas.k2.com/worklist/d1/OpenWorklist" name="OpenWorklist" bindingOperationName="OpenWorklist" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b6739707-8e22-4853-8144-2dfab3e73c3d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soap:Header/>
+   <soap:Body>
+      <d1:OpenWorklist>
+         <d1:IncludeData>?</d1:IncludeData>
+      </d1:OpenWorklist>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/OpenWorklistRequest"/></con:call></con:operation><con:operation id="ccaae656-0e66-4d3a-a5de-67db2834b63f" isOneWay="false" action="http://schemas.k2.com/worklist/d1/OpenWorklistItem" name="OpenWorklistItem" bindingOperationName="OpenWorklistItem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b17f94cc-9e45-4ab3-acae-944400cab928" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soap:Header/>
+   <soap:Body>
+      <d1:OpenWorklistItem>
+         <!--Optional:-->
+         <d1:Serial>?</d1:Serial>
+         <d1:Sync>?</d1:Sync>
+      </d1:OpenWorklistItem>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/OpenWorklistItemRequest"/></con:call></con:operation><con:operation id="e163e738-dc73-4ff3-b0cb-e8de20000b00" isOneWay="false" action="http://schemas.k2.com/worklist/d1/ReleaseWorklistItem" name="ReleaseWorklistItem" bindingOperationName="ReleaseWorklistItem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="aaac98e2-9529-4163-ba80-2a7004c33d41" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soap:Header/>
+   <soap:Body>
+      <d1:ReleaseWorklistItem>
+         <!--Optional:-->
+         <d1:Serial>?</d1:Serial>
+      </d1:ReleaseWorklistItem>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/ReleaseWorklistItemRequest"/></con:call></con:operation><con:operation id="1d1481d1-a6e5-43d8-a920-298ecdb2c42a" isOneWay="false" action="http://schemas.k2.com/worklist/d1/StartNewProcessInstance" name="StartNewProcessInstance" bindingOperationName="StartNewProcessInstance" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="93786827-c128-451d-8131-c963aa48f258" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:d1="http://schemas.k2.com/worklist/d1" xmlns:d11="http://schemas.k2.com/process/d1">
+   <soap:Header/>
+   <soap:Body>
+      <d1:StartNewProcessInstance>
+         <d1:ProcessInstance ExpectedDuration="?" Folder="?" Folio="?" FullName="?" Guid="?" ID="?" Name="?" Priority="?" StartDate="?" Status="?">
+            <!--Optional:-->
+            <d11:Description>?</d11:Description>
+            <!--Optional:-->
+            <d11:Metadata>?</d11:Metadata>
+            <!--Zero or more repetitions:-->
+            <d11:DataField Name="?">?</d11:DataField>
+            <!--Zero or more repetitions:-->
+            <d11:XmlField Name="?">?</d11:XmlField>
+            <!--Optional:-->
+            <d1:ViewFlow>?</d1:ViewFlow>
+         </d1:ProcessInstance>
+         <d1:Sync>?</d1:Sync>
+      </d1:StartNewProcessInstance>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/StartNewProcessInstanceRequest"/></con:call></con:operation><con:operation id="d3d0fcc6-802f-4e39-ae8b-699d54e34331" isOneWay="false" action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar" name="StartNewProcessInstanceScalar" bindingOperationName="StartNewProcessInstanceScalar" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fe4d4fbf-9185-4256-ac57-f0ddb0220374" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soap:Header/>
+   <soap:Body>
+      <d1:StartNewProcessInstanceScalar>
+         <!--Optional:-->
+         <d1:ProcessFullName>?</d1:ProcessFullName>
+         <!--Optional:-->
+         <d1:Folio>?</d1:Folio>
+         <d1:Sync>?</d1:Sync>
+      </d1:StartNewProcessInstanceScalar>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/StartNewProcessInstanceScalarRequest"/></con:call></con:operation><con:operation id="76c4ae92-703f-449b-8862-9a6991fe28c4" isOneWay="false" action="http://schemas.k2.com/worklist/d1/UpdateProcessInstance" name="UpdateProcessInstance" bindingOperationName="UpdateProcessInstance" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fa08adf4-0459-4e5f-9836-3f8b1a0d6949" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:d1="http://schemas.k2.com/worklist/d1" xmlns:d11="http://schemas.k2.com/process/d1">
+   <soap:Header/>
+   <soap:Body>
+      <d1:UpdateProcessInstance>
+         <d1:ProcessInstance ExpectedDuration="?" Folder="?" Folio="?" FullName="?" Guid="?" ID="?" Name="?" Priority="?" StartDate="?" Status="?">
+            <!--Optional:-->
+            <d11:Description>?</d11:Description>
+            <!--Optional:-->
+            <d11:Metadata>?</d11:Metadata>
+            <!--Zero or more repetitions:-->
+            <d11:DataField Name="?">?</d11:DataField>
+            <!--Zero or more repetitions:-->
+            <d11:XmlField Name="?">?</d11:XmlField>
+            <!--Optional:-->
+            <d1:ViewFlow>?</d1:ViewFlow>
+         </d1:ProcessInstance>
+         <d1:Sync>?</d1:Sync>
+      </d1:UpdateProcessInstance>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/UpdateProcessInstanceRequest"/></con:call></con:operation></con:interface><con:testSuite id="e5a809b9-855d-4835-b824-0191ecfcc2fe" name="WSSoap TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a73d13cd-650a-4093-ba2d-0fbd0af83670" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="StartNewProcessInstanceScalar TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="1fe70b17-8899-419b-94c6-b87b8263a290" name="StartNewProcessInstanceScalar"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSSoap</con:interface><con:operation>StartNewProcessInstanceScalar</con:operation><con:request name="StartNewProcessInstanceScalar" id="67e6baf4-7832-47c4-ab01-dcf7d4332b2d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:StartNewProcessInstanceScalar>
+         <!--Optional:-->
+         <d1:ProcessFullName>?</d1:ProcessFullName>
+         <!--Optional:-->
+         <d1:Folio>?</d1:Folio>
+         <d1:Sync>?</d1:Sync>
+      </d1:StartNewProcessInstanceScalar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService id="9cadbfaf-ddab-4651-b0b2-18a5286dadfd" port="8088" path="/mockWSSoap" host="Radars-MacBook-Pro" name="K2MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ExecuteActionBySerial" id="9c45d7e1-1eb3-4427-bf6b-91f4ec9c5444" interface="WSSoap" operation="ExecuteActionBySerial"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="14d56c65-7889-4bc2-8518-f0809714529a" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:ExecuteActionBySerialResponse/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/ExecuteActionBySerial"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="OpenWorklist" id="a089644f-7cd0-42ff-aaaf-c295f04f5fe6" interface="WSSoap" operation="OpenWorklist"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="27ef822f-06bc-4fe2-a728-f9a339318d5a" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <OpenWorklistResponse xmlns="http://schemas.k2.com/worklist/d1">
+         <OpenWorklistResult>
+           <WorklistItem AllocatedUser="K2:HK\k2srvt2" ID="48116" SerialNumber="6565_9" Status="Available">
+               <Data>http://hkcp-webap-t2.hk.kgi.com/RoleFilter/Update.aspx?SN=6565_9</Data>
+               <Action Name="Process" Batchable="true"/>
+               <ProcessInstance ExpectedDuration="0" Folder="SmartObjectFilter" Folio="00000011" FullName="SmartObjectFilter\RoleFilter" Guid="a05fab2b-a3a6-4daf-839f-c40a43651b78" ID="6565" Name="RoleFilter" Priority="1" StartDate="2019-09-09T03:30:07.097Z" Status="Active" xmlns="http://schemas.k2.com/process/d1">
+                  <Description/>
+                  <Metadata/>
+                  <ViewFlow xmlns="http://schemas.k2.com/worklist/d1">http://HKCP-WEBAP-T2:81/ViewFlow/ViewFlow.aspx?ProcessID=6565</ViewFlow>
+               </ProcessInstance>
+               <ActivityInstanceDestination ActID="6111" ActInstID="6" ExpectedDuration="0" ID="9" Name="Update" Priority="1" ProcInstID="6565" StartDate="2019-09-09T03:30:07.157Z" xmlns="http://schemas.k2.com/activity/d1">
+                  <Description/>
+                  <Metadata/>
+               </ActivityInstanceDestination>
+               <ActivityInstanceDestination ExpectedDuration="0" ID="33" Name="Update field" Priority="1" StartDate="2019-09-09T03:30:12.72Z" xmlns="http://schemas.k2.com/event/d1">
+                  <Description/>
+                  <Metadata/>
+               </ActivityInstanceDestination>
+            </WorklistItem>
+         </OpenWorklistResult>
+      </OpenWorklistResponse>
+   </soap:Body>
+</soap:Envelope>
+]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/OpenWorklist"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="StartNewProcessInstanceScalar" id="9a9bbd20-4040-4bfd-8b78-f59c3f2f3b11" interface="WSSoap" operation="StartNewProcessInstanceScalar"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="4467ecd8-7367-4291-a253-0399d13f1a7b" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   &lt;soap:Body>
+      &lt;ExecuteActionBySerialResponse xmlns="http://schemas.k2.com/worklist/d1"/>
+   &lt;/soap:Body>
+&lt;/soap:Envelope></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

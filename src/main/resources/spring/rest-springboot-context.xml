@@ -9,11 +9,11 @@
         <restConfiguration bindingMode="json" component="servlet"
             host="localhost" port="8081"/>
         <rest id="rest-728d490e-252f-403d-b2cb-337e31cee918" path="/jaxrs">
-            <get id="get-d79f561f-c826-4230-a2e1-c2daa6cbc6c2"
+            <put id="get-d79f561f-c826-4230-a2e1-c2daa6cbc6c2"
                 outType="com.k2.schemas.worklist.d1.ExecuteActionBySerialResponse"
-                type="com.k2.schemas.worklist.d1.ExecuteActionBySerial" uri="/executeactionbyserial/{arg0}">
+                type="com.k2.schemas.worklist.d1.ExecuteActionBySerial" uri="/executeactionbyserial">
                 <to uri="direct:ExecuteActionBySerial"/>
-            </get>
+            </put>
             <get id="get-f1438165-956e-49e0-84d1-b95e2164a5ea"
                 outType="com.k2.schemas.worklist.d1.ExecuteActionByWorklistItemResponse"
                 type="com.k2.schemas.worklist.d1.ExecuteActionByWorklistItem" uri="/executeactionbyworklistitem/{arg0}">
@@ -24,11 +24,11 @@
                 type="com.k2.schemas.worklist.d1.OpenProcessInstance" uri="/openprocessinstance/{arg0}">
                 <to uri="direct:OpenProcessInstance"/>
             </get>
-            <get id="get-2173d785-dc2c-4b37-8c04-4ee7a185e2e4"
+            <put id="get-2173d785-dc2c-4b37-8c04-4ee7a185e2e4"
                 outType="com.k2.schemas.worklist.d1.OpenWorklistResponse"
-                type="com.k2.schemas.worklist.d1.OpenWorklist" uri="/openworklist/{arg0}">
+                type="com.k2.schemas.worklist.d1.OpenWorklist" uri="/openworklist">
                 <to uri="direct:OpenWorklist"/>
-            </get>
+            </put>
             <get id="get-9e2faf13-a130-4bb5-a5dc-e98bccb4e0ca"
                 outType="com.k2.schemas.worklist.d1.OpenWorklistItemResponse"
                 type="com.k2.schemas.worklist.d1.OpenWorklistItem" uri="/openworklistitem/{arg0}">
@@ -44,10 +44,10 @@
                 type="com.k2.schemas.worklist.d1.StartNewProcessInstance" uri="/startnewprocessinstance/{arg0}">
                 <to uri="direct:StartNewProcessInstance"/>
             </get>
-            <put consumes="application/json" id="get-2a34853e-c954-4dbc-bbcc-43115b33f243"
+            <put consumes="application/json"
+                id="get-2a34853e-c954-4dbc-bbcc-43115b33f243"
                 outType="com.k2.schemas.worklist.d1.StartNewProcessInstanceScalarResponse"
                 type="com.k2.schemas.worklist.d1.StartNewProcessInstanceScalar" uri="/startnewprocessinstancescalar">
-              
                 <to uri="direct:StartNewProcessInstanceScalar"/>
             </put>
             <put consumes="application/json"
@@ -59,8 +59,24 @@
         </rest>
         <route id="ExecuteActionBySerial">
             <from id="_from1" uri="direct:ExecuteActionBySerial"/>
+            <to id="_to12" uri="log:foo"/>
             <log id="_log1" loggingLevel="INFO" message="ExecuteActionBySerial"/>
-            <to id="_to1" uri="cxf://http://localhost:8088/k2services/WS.asmx?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=ExecuteActionBySerial"/>
+            <log id="_log11" loggingLevel="INFO" message="log11: ${body}"/>
+            <setBody id="_setBody10">
+                <simple>&lt;ExecuteActionBySerial xmlns="http://schemas.k2.com/worklist/d1"&gt;
+    &lt;Serial&gt;6569_9&lt;/Serial&gt;
+    &lt;Action&gt;Process&lt;/Action&gt;
+    &lt;Sync&gt;false&lt;/Sync&gt;
+&lt;/ExecuteActionBySerial&gt;</simple>
+            </setBody>
+            <log id="_log12" loggingLevel="INFO" message="log11: ${body}"/>
+             
+            <to id="_to1" uri="cxf://http://localhost:8088/mockWSSoap?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=ExecuteActionBySerial"/>
+            
+            <!--  
+            <to id="_to1" uri="cxf://http://localhost:8088/mockWSSoap?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=OpenWorklist"/>
+            -->
+            <to id="_to13" uri="log:foo"/>
             <setHeader headerName="Content-Type" id="_setHeader1">
                 <constant>application/json</constant>
             </setHeader>
@@ -91,15 +107,26 @@
             </setBody>
         </route>
         <route id="OpenWorklist">
+            <!--  
+            <to id="_to4" uri="cxf://http://localhost:8088/k2services/WS.asmx?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=OpenWorklist"/>
+            -->
             <from id="_from4" uri="direct:OpenWorklist"/>
             <log id="_log4" loggingLevel="INFO" message="OpenWorklist"/>
-            <to id="_to4" uri="cxf://http://localhost:8088/k2services/WS.asmx?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=OpenWorklist"/>
+            <log id="_log41" loggingLevel="INFO" message="log41: ${body}"/>
+            <to id="_to4" uri="cxf://http://localhost:8088/mockWSSoap?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=OpenWorklist"/>
+            <log id="_log42" loggingLevel="INFO" message="${body[0].worklistItem[0].content[0]}"/>
+            <to id="_to10" uri="log:foo"/>
             <setHeader headerName="Content-Type" id="_setHeader4">
                 <constant>application/json</constant>
             </setHeader>
             <setBody id="_setBody4">
-                <simple>${body[0]}</simple>
+                <simple>${body[0].worklistItem[0].content[0].value}</simple>
             </setBody>
+            <split id="_split1">
+                <tokenize regex="true" token=".*SN="/>
+                <to id="_to11" uri="log:tokenize"/>
+            </split>
+            <log id="_log10" loggingLevel="INFO" message="data: ${body}"/>
         </route>
         <route id="OpenWorklistItem">
             <from id="_from5" uri="direct:OpenWorklistItem"/>
@@ -135,10 +162,14 @@
             </setBody>
         </route>
         <route id="StartNewProcessInstanceScalar">
+            <!--  
+            <to id="_to8" uri="cxf://http://localhost:8088/k2services/WS.asmx?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=StartNewProcessInstanceScalar"/>
+            -->
             <from id="_from8" uri="direct:StartNewProcessInstanceScalar"/>
             <log id="_log8" loggingLevel="INFO" message="StartNewProcessInstanceScalar"/>
             <log id="_log81" loggingLevel="INFO" message="${body}"/>
-            <to id="_to8" uri="cxf://http://localhost:8088/k2services/WS.asmx?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=StartNewProcessInstanceScalar"/>
+            <to id="_to8" uri="cxf://http://localhost:8088/mockWSSoap?serviceClass=com.k2.schemas.worklist.d1.WSSoap&amp;defaultOperationName=StartNewProcessInstanceScalar"/>
+            <log id="_log82" loggingLevel="INFO" message="${body}"/>
             <setHeader headerName="Content-Type" id="_setHeader8">
                 <constant>application/json</constant>
             </setHeader>

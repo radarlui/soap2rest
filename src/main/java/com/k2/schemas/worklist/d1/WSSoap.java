@@ -98,13 +98,18 @@ public interface WSSoap {
     @WebMethod(operationName = "ExecuteActionBySerial", action = "http://schemas.k2.com/worklist/d1/ExecuteActionBySerial")
     @RequestWrapper(localName = "ExecuteActionBySerial", targetNamespace = "http://schemas.k2.com/worklist/d1", className = "com.k2.schemas.worklist.d1.ExecuteActionBySerial")
     @ResponseWrapper(localName = "ExecuteActionBySerialResponse", targetNamespace = "http://schemas.k2.com/worklist/d1", className = "com.k2.schemas.worklist.d1.ExecuteActionBySerialResponse")
+    @WebResult(name = "ExecuteActionBySerialResult", targetNamespace = "http://schemas.k2.com/worklist/d1")
     public void executeActionBySerial(
+    	/*	
         @WebParam(name = "Serial", targetNamespace = "http://schemas.k2.com/worklist/d1")
         java.lang.String serial,
         @WebParam(name = "Action", targetNamespace = "http://schemas.k2.com/worklist/d1")
         java.lang.String action,
         @WebParam(name = "Sync", targetNamespace = "http://schemas.k2.com/worklist/d1")
         boolean sync
+        */
+    		 @WebParam(name = "arg0", targetNamespace = "http://schemas.k2.com/worklist/d1")
+    		ExecuteActionBySerial arg0
     );
 
     @WebMethod(operationName = "OpenWorklist", action = "http://schemas.k2.com/worklist/d1/OpenWorklist")
@@ -112,7 +117,11 @@ public interface WSSoap {
     @ResponseWrapper(localName = "OpenWorklistResponse", targetNamespace = "http://schemas.k2.com/worklist/d1", className = "com.k2.schemas.worklist.d1.OpenWorklistResponse")
     @WebResult(name = "OpenWorklistResult", targetNamespace = "http://schemas.k2.com/worklist/d1")
     public com.k2.schemas.worklist.d1.ArrayOfWorklistItem openWorklist(
+    		/*
         @WebParam(name = "IncludeData", targetNamespace = "http://schemas.k2.com/worklist/d1")
         boolean includeData
+        */
+        @WebParam(name = "arg0", targetNamespace = "http://schemas.k2.com/worklist/d1")
+        OpenWorklist arg0
     );
 }
