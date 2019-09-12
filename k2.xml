@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="8b621379-87b4-46ce-a38b-85a9030b1315" activeEnvironment="Default" name="HelloService" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="66ed35cf-875e-473a-8ee5-9926ba32f4a8" wsaVersion="NONE" name="HelloService" type="wsdl" bindingName="{http://www.example.com/hello}HelloServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/lbroudou/Development/github/microcks/samples/HelloService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/lbroudou/Development/github/microcks/samples/HelloService.wsdl"><con:part><con:url>file:/Users/lbroudou/Development/github/microcks/samples/HelloService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HelloService" targetNamespace="http://www.example.com/hello" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.com/hello" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+<con:soapui-project id="04d3b7b4-8bd0-448e-9f3d-a63ca63f3aaf" activeEnvironment="Default" name="k2" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="77c9c011-c440-4705-9706-5d7228d8972d" wsaVersion="NONE" name="WSSoap" type="wsdl" bindingName="{http://schemas.k2.com/worklist/d1}WSSoap" soapVersion="1_1" anonymous="optional" definition="https://trial.onk2.com/K2Services/ws.asmx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.tcpmon.TcpMonAction@values-local">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="Add local endpoint" value="false"/>
+  &lt;con:entry key="Local Port" value="8888"/>
+  &lt;con:entry key="Endpoint" value="http://Radars-MacBook-Pro:8088/mockWSSoap"/>
+&lt;/xml-fragment></con:setting></con:settings><con:definitionCache/><con:endpoints><con:endpoint>http://Radars-MacBook-Pro:8088/mockWSSoap</con:endpoint><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint></con:endpoints><con:operation id="af5a6b5a-62fa-46dc-bb62-7cf961e4b527" isOneWay="false" action="http://schemas.k2.com/worklist/d1/ExecuteActionBySerial" name="ExecuteActionBySerial" bindingOperationName="ExecuteActionBySerial" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c25e0b10-4045-420d-b4f0-eaebd563e317" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockWSSoap</con:endpoint><con:request>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 &lt;OpenWorklist xmlns="http://schemas.k2.com/worklist/d1">
     &lt;IncludeData>false&lt;/IncludeData>
 &lt;/OpenWorklist></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/ExecuteActionBySerial"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="559776fb-c766-4911-8461-b74f56009894" isOneWay="false" action="http://schemas.k2.com/worklist/d1/ExecuteActionByWorklistItem" name="ExecuteActionByWorklistItem" bindingOperationName="ExecuteActionByWorklistItem" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b5a867e3-a4e5-436a-b83f-0c6e52cc5731" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1" xmlns:d11="http://schemas.k2.com/process/d1" xmlns:d12="http://schemas.k2.com/activity/d1" xmlns:d13="http://schemas.k2.com/event/d1">
@@ -802,7 +806,125 @@
          <d1:Sync>?</d1:Sync>
       </d1:UpdateProcessInstance>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/UpdateProcessInstanceRequest"/></con:call></con:operation></con:interface><con:testSuite id="e5a809b9-855d-4835-b824-0191ecfcc2fe" name="WSSoap TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a73d13cd-650a-4093-ba2d-0fbd0af83670" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="StartNewProcessInstanceScalar TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="1fe70b17-8899-419b-94c6-b87b8263a290" name="StartNewProcessInstanceScalar"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSSoap</con:interface><con:operation>StartNewProcessInstanceScalar</con:operation><con:request name="StartNewProcessInstanceScalar" id="67e6baf4-7832-47c4-ab01-dcf7d4332b2d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/WSSoap/UpdateProcessInstanceRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="05ed65c1-ab1a-474f-ab18-6b2650fd064a" wsaVersion="NONE" name="CustomerWSServiceSoapBinding" type="wsdl" bindingName="{http://service.agileintegration.labs.redhat.com/}CustomerWSServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/radarlui/dev/github/agile-integration-for-the-enterprise/labs/lab02/03_amq-enrich-persist-lab/src/main/resources/wsdl/customerService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/radarlui/dev/github/agile-integration-for-the-enterprise/labs/lab02/03_amq-enrich-persist-lab/src/main/resources/wsdl/customerService.wsdl"><con:part><con:url>file:/Users/radarlui/dev/github/agile-integration-for-the-enterprise/labs/lab02/03_amq-enrich-persist-lab/src/main/resources/wsdl/customerService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CustomerWSService" targetNamespace="http://service.agileintegration.labs.redhat.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.agileintegration.labs.redhat.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://service.agileintegration.labs.redhat.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CorporateAccount" type="tns:corporateAccount"/>
+      <xs:element name="updateAccount" type="tns:updateAccount"/>
+      <xs:element name="updateAccountResponse" type="tns:updateAccountResponse"/>
+      <xs:complexType name="updateAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:account"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="account">
+        <xs:sequence>
+          <xs:element name="clientId" type="xs:int"/>
+          <xs:element minOccurs="0" name="company" type="tns:company"/>
+          <xs:element minOccurs="0" name="contact" type="tns:contact"/>
+          <xs:element minOccurs="0" name="salesRepresentative" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="company">
+        <xs:sequence>
+          <xs:element name="active" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="geo" type="xs:string"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="contact">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="city" type="xs:string"/>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="phone" type="xs:string"/>
+          <xs:element minOccurs="0" name="state" type="xs:string"/>
+          <xs:element minOccurs="0" name="streetAddr" type="xs:string"/>
+          <xs:element minOccurs="0" name="zip" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:corporateAccount"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="corporateAccount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="company" type="tns:company"/>
+          <xs:element minOccurs="0" name="contact" type="tns:contact"/>
+          <xs:element name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="salesContact" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="updateAccountResponse">
+    <wsdl:part element="tns:updateAccountResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateAccount">
+    <wsdl:part element="tns:updateAccount" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CustomerWS">
+    <wsdl:operation name="updateAccount">
+      <wsdl:input message="tns:updateAccount" name="updateAccount"></wsdl:input>
+      <wsdl:output message="tns:updateAccountResponse" name="updateAccountResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerWSServiceSoapBinding" type="tns:CustomerWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updateAccount">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateAccount">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateAccountResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerWSService">
+    <wsdl:port binding="tns:CustomerWSServiceSoapBinding" name="CustomerWSPort">
+      <soap:address location="http://localhost:9090/ws/customerService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://Radars-MacBook-Pro:8089/mockCustomerWSServiceSoapBinding</con:endpoint><con:endpoint>http://localhost:9090/ws/customerService</con:endpoint></con:endpoints><con:operation id="6f62a0ab-e5b5-47e3-8c30-ef09d7df4b52" isOneWay="false" action="" name="updateAccount" bindingOperationName="updateAccount" type="Request-Response" outputName="updateAccountResponse" inputName="updateAccount" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ca3e482d-25ac-4a4c-a112-ab2d2997e350" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://Radars-MacBook-Pro:8089/mockCustomerWSServiceSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.agileintegration.labs.redhat.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:updateAccount>
+         <!--Optional:-->
+         <arg0>
+            <clientId>?</clientId>
+            <!--Optional:-->
+            <company>
+               <active>?</active>
+               <!--Optional:-->
+               <geo>?</geo>
+               <!--Optional:-->
+               <name>?</name>
+            </company>
+            <!--Optional:-->
+            <contact>
+               <!--Optional:-->
+               <city>?</city>
+               <!--Optional:-->
+               <firstName>?</firstName>
+               <!--Optional:-->
+               <lastName>?</lastName>
+               <!--Optional:-->
+               <phone>?</phone>
+               <!--Optional:-->
+               <state>?</state>
+               <!--Optional:-->
+               <streetAddr>?</streetAddr>
+               <!--Optional:-->
+               <zip>?</zip>
+            </contact>
+            <!--Optional:-->
+            <salesRepresentative>?</salesRepresentative>
+         </arg0>
+      </ser:updateAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.agileintegration.labs.redhat.com/CustomerWS/updateAccount"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="e5a809b9-855d-4835-b824-0191ecfcc2fe" name="WSSoap TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a73d13cd-650a-4093-ba2d-0fbd0af83670" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="StartNewProcessInstanceScalar TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="1fe70b17-8899-419b-94c6-b87b8263a290" name="StartNewProcessInstanceScalar"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSSoap</con:interface><con:operation>StartNewProcessInstanceScalar</con:operation><con:request name="StartNewProcessInstanceScalar" id="67e6baf4-7832-47c4-ab01-dcf7d4332b2d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://trial.onk2.com/K2Services/ws.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
    <soapenv:Header/>
    <soapenv:Body>
       <d1:StartNewProcessInstanceScalar>
@@ -813,17 +935,83 @@
          <d1:Sync>?</d1:Sync>
       </d1:StartNewProcessInstanceScalar>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService id="9cadbfaf-ddab-4651-b0b2-18a5286dadfd" port="8088" path="/mockWSSoap" host="Radars-MacBook-Pro" name="K2MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ExecuteActionBySerial" id="9c45d7e1-1eb3-4427-bf6b-91f4ec9c5444" interface="WSSoap" operation="ExecuteActionBySerial"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="14d56c65-7889-4bc2-8518-f0809714529a" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="dbbfe5f0-f8e8-40b3-a679-798485739fd6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ExecuteActionBySerial TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="2edbce19-4579-4af9-8e72-8bcf86b66d03" name="ExecuteActionBySerial"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSSoap</con:interface><con:operation>ExecuteActionBySerial</con:operation><con:request name="ExecuteActionBySerial" id="d017d975-4f7e-4288-91bd-b21dd1102fe4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://Radars-MacBook-Pro:8088/mockWSSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
    <soapenv:Header/>
    <soapenv:Body>
-      <d1:ExecuteActionBySerialResponse/>
+      <d1:ExecuteActionBySerial>
+         <!--Optional:-->
+         <d1:Serial>?</d1:Serial>
+         <!--Optional:-->
+         <d1:Action>?</d1:Action>
+         <d1:Sync>?</d1:Sync>
+      </d1:ExecuteActionBySerial>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://schemas.k2.com/worklist/d1/ExecuteActionBySerial"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="bb699222-066c-48bd-8c65-3d7a4fd8ee40" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="OpenWorklist TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="b148d3c7-7495-43f8-8c08-e5a6c068dfc4" name="OpenWorklist"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSSoap</con:interface><con:operation>OpenWorklist</con:operation><con:request name="OpenWorklist" id="d2b1c965-7ee9-472b-9e05-c895a7adeff8"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://Radars-MacBook-Pro:8088/mockWSSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:OpenWorklist>
+         <d1:IncludeData>?</d1:IncludeData>
+      </d1:OpenWorklist>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://schemas.k2.com/worklist/d1/OpenWorklist"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="49e70437-e224-4b79-abbd-a6188c7cba83" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="StartNewProcessInstanceScalar TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="34b3fe37-e27d-4a28-b10d-1d6d040fd66c" name="StartNewProcessInstanceScalar"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WSSoap</con:interface><con:operation>StartNewProcessInstanceScalar</con:operation><con:request name="StartNewProcessInstanceScalar" id="68aa40d5-e77c-49ef-9a36-e1ecb5277cfc"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://Radars-MacBook-Pro:8088/mockWSSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:StartNewProcessInstanceScalar>
+         <!--Optional:-->
+         <d1:ProcessFullName>?</d1:ProcessFullName>
+         <!--Optional:-->
+         <d1:Folio>?</d1:Folio>
+         <d1:Sync>?</d1:Sync>
+      </d1:StartNewProcessInstanceScalar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="0446d51a-531c-491e-973d-e3cf309c3423" name="CustomerWSServiceSoapBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="9a9336d5-dfe6-4d9b-a93a-f03279aef742" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="updateAccount TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="e375748b-bc8b-47b0-904f-dce404bb0179" name="updateAccount"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CustomerWSServiceSoapBinding</con:interface><con:operation>updateAccount</con:operation><con:request name="updateAccount" id="8dff32ac-1584-460e-87e3-885931498ae5"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/ws/customerService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.agileintegration.labs.redhat.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:updateAccount>
+         <!--Optional:-->
+         <arg0>
+            <clientId>?</clientId>
+            <!--Optional:-->
+            <company>
+               <active>?</active>
+               <!--Optional:-->
+               <geo>?</geo>
+               <!--Optional:-->
+               <name>?</name>
+            </company>
+            <!--Optional:-->
+            <contact>
+               <!--Optional:-->
+               <city>?</city>
+               <!--Optional:-->
+               <firstName>?</firstName>
+               <!--Optional:-->
+               <lastName>?</lastName>
+               <!--Optional:-->
+               <phone>?</phone>
+               <!--Optional:-->
+               <state>?</state>
+               <!--Optional:-->
+               <streetAddr>?</streetAddr>
+               <!--Optional:-->
+               <zip>?</zip>
+            </contact>
+            <!--Optional:-->
+            <salesRepresentative>?</salesRepresentative>
+         </arg0>
+      </ser:updateAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://service.agileintegration.labs.redhat.com/CustomerWS/updateAccount"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService id="9cadbfaf-ddab-4651-b0b2-18a5286dadfd" port="8088" path="/mockWSSoap" host="Radars-MacBook-Pro" name="K2MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ExecuteActionBySerial" id="9c45d7e1-1eb3-4427-bf6b-91f4ec9c5444" interface="WSSoap" operation="ExecuteActionBySerial"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="14d56c65-7889-4bc2-8518-f0809714529a" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:d1="http://schemas.k2.com/worklist/d1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <d1:ExecuteActionBySerialResponse>Success</d1:ExecuteActionBySerialResponse>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/ExecuteActionBySerial"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="OpenWorklist" id="a089644f-7cd0-42ff-aaaf-c295f04f5fe6" interface="WSSoap" operation="OpenWorklist"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="27ef822f-06bc-4fe2-a728-f9a339318d5a" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <soap:Body>
       <OpenWorklistResponse xmlns="http://schemas.k2.com/worklist/d1">
          <OpenWorklistResult>
            <WorklistItem AllocatedUser="K2:HK\k2srvt2" ID="48116" SerialNumber="6565_9" Status="Available">
-               <Data>http://hkcp-webap-t2.hk.kgi.com/RoleFilter/Update.aspx?SN=6565_9</Data>
+               <Data>http://hkcp-webap-t2.hk.kgi.com/RoleFilter/Update.aspx?SN=6565_11</Data>
                <Action Name="Process" Batchable="true"/>
                <ProcessInstance ExpectedDuration="0" Folder="SmartObjectFilter" Folio="00000011" FullName="SmartObjectFilter\RoleFilter" Guid="a05fab2b-a3a6-4daf-839f-c40a43651b78" ID="6565" Name="RoleFilter" Priority="1" StartDate="2019-09-09T03:30:07.097Z" Status="Active" xmlns="http://schemas.k2.com/process/d1">
                   <Description/>
@@ -843,8 +1031,48 @@
       </OpenWorklistResponse>
    </soap:Body>
 </soap:Envelope>
-]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/OpenWorklist"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="StartNewProcessInstanceScalar" id="9a9bbd20-4040-4bfd-8b78-f59c3f2f3b11" interface="WSSoap" operation="StartNewProcessInstanceScalar"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="4467ecd8-7367-4291-a253-0399d13f1a7b" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   &lt;soap:Body>
-      &lt;ExecuteActionBySerialResponse xmlns="http://schemas.k2.com/worklist/d1"/>
-   &lt;/soap:Body>
-&lt;/soap:Envelope></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/OpenWorklist"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="StartNewProcessInstanceScalar" id="9a9bbd20-4040-4bfd-8b78-f59c3f2f3b11" interface="WSSoap" operation="StartNewProcessInstanceScalar"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="4467ecd8-7367-4291-a253-0399d13f1a7b" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <StartNewProcessInstanceScalarResponse xmlns="http://schemas.k2.com/worklist/d1">
+         <StartNewProcessInstanceScalarResult>6566</StartNewProcessInstanceScalarResult>
+      </StartNewProcessInstanceScalarResponse>
+   </soap:Body>
+</soap:Envelope>
+]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.k2.com/worklist/d1/StartNewProcessInstanceScalar"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:mockService id="96e5c6f0-3d09-4290-ab96-f8f80cafe865" port="8089" path="/mockCustomerWSServiceSoapBinding" host="Radars-MacBook-Pro" name="CustomerWSServiceSoapBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="updateAccount" id="468f3450-b10d-4077-bd8e-4657ac6fb8f6" interface="CustomerWSServiceSoapBinding" operation="updateAccount"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="263ca9e6-34eb-479c-9056-a140e8408988" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.agileintegration.labs.redhat.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:updateAccountResponse>
+         <!--Optional:-->
+         <return>
+            <!--Optional:-->
+            <company>
+               <active>?</active>
+               <!--Optional:-->
+               <geo>?</geo>
+               <!--Optional:-->
+               <name>?</name>
+            </company>
+            <!--Optional:-->
+            <contact>
+               <!--Optional:-->
+               <city>?</city>
+               <!--Optional:-->
+               <firstName>?</firstName>
+               <!--Optional:-->
+               <lastName>?</lastName>
+               <!--Optional:-->
+               <phone>?</phone>
+               <!--Optional:-->
+               <state>?</state>
+               <!--Optional:-->
+               <streetAddr>?</streetAddr>
+               <!--Optional:-->
+               <zip>?</zip>
+            </contact>
+            <id>?</id>
+            <!--Optional:-->
+            <salesContact>?</salesContact>
+         </return>
+      </ser:updateAccountResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.agileintegration.labs.redhat.com/CustomerWS/updateAccountResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
